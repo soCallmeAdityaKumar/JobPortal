@@ -1,5 +1,7 @@
 package com.example.jobportal.di
 
+import android.util.Log
+import com.example.jobportal.common.Constants
 import com.example.jobportal.retrofit.JobsService
 import dagger.Module
 import dagger.Provides
@@ -19,6 +21,7 @@ class NetworkModule {
     fun provideRetrofit():JobsService{
         return  Retrofit
             .Builder()
+            .baseUrl(Constants.LOKAL_URI)
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(JobsService::class.java)
     }

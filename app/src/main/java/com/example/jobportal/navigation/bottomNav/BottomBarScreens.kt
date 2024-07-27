@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.jobportal.navigation.JobsScreen
 
 sealed class BottomBarScreens (
     val route:String,
@@ -11,8 +12,8 @@ sealed class BottomBarScreens (
     val icon:ImageVector
 ){
     object Jobs: BottomBarScreens(
-        route = "jobs",
-        title = "JOBS",
+        route = JobsScreen.Jobs.route,
+        title = JobsScreen.Jobs.title,
         icon = Icons.Default.Person
     )
     object Saved: BottomBarScreens(

@@ -1,5 +1,7 @@
 package com.example.jobportal.retrofit.model
 
+import java.io.Serializable
+
 data class FeeDetails(
-    val V3: List<Any>
-)
+    val fee: List<String>
+): Serializable

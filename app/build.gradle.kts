@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
+    id("kotlin-parcelize")
+
     id("com.google.dagger.hilt.android")
 }
 
@@ -72,22 +74,28 @@ dependencies {
     implementation("androidx.compose.material:material:1.4.2")
 
     //navigation
-    implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     //hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     //room
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
-
-    // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    //GSON
+    implementation ("com.google.code.gson:gson:2.8.9")
+
+    implementation("io.coil-kt:coil-compose:2.1.0")
+
 }
